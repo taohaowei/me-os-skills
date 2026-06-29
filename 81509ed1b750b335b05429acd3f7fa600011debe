@@ -1,0 +1,40 @@
+scripts/init
+  6cb43af0e4ba6621 85
+evolve/runner.sh
+  6cb43af0e4ba6621 32,53,64,69,72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.8",
+  "base_commit_sha": "81509ed1b750b335b05429acd3f7fa600011debe",
+  "prompts": {
+    "6cb43af0e4ba6621": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3049b92-3a36-45fe-bcec-960bd41fc06f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 6,
+      "accepted_lines": 34,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "evolve/runner.sh": {
+          "additions": 5,
+          "deletions": 5,
+          "accepted_lines": 5
+        },
+        "scripts/ci/redact-gate.yml": {
+          "accepted_lines": 28
+        },
+        "scripts/init": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        }
+      }
+    }
+  }
+}
