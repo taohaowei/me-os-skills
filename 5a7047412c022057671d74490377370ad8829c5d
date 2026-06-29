@@ -1,7 +1,35 @@
+scripts/ci/README.md
+  6cb43af0e4ba6621 1-19
+scripts/ci/redact-gate.yml
+  6cb43af0e4ba6621 1-28
 ---
 {
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.2.8-ntes.8",
-  "base_commit_sha": "7c3727b17850626356e789f602cb804484b37c2f",
-  "prompts": {}
+  "base_commit_sha": "5a7047412c022057671d74490377370ad8829c5d",
+  "prompts": {
+    "6cb43af0e4ba6621": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3049b92-3a36-45fe-bcec-960bd41fc06f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 47,
+      "total_deletions": 0,
+      "accepted_lines": 47,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "scripts/ci/redact-gate.yml": {
+          "additions": 28,
+          "accepted_lines": 28
+        },
+        "scripts/ci/README.md": {
+          "additions": 19,
+          "accepted_lines": 19
+        }
+      }
+    }
+  }
 }
