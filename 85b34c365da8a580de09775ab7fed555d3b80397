@@ -1,0 +1,47 @@
+SKILL.md
+  6cb43af0e4ba6621 18,20,22-27,84,111-113,116,136,140,142-145,148,165-166,188,192,195,197-198,224-225
+experts/心理咨询.md
+  6cb43af0e4ba6621 4
+README.md
+  6cb43af0e4ba6621 123,127,129,140,153,178-180,183-188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.8",
+  "base_commit_sha": "85b34c365da8a580de09775ab7fed555d3b80397",
+  "prompts": {
+    "6cb43af0e4ba6621": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3049b92-3a36-45fe-bcec-960bd41fc06f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 60,
+      "total_deletions": 51,
+      "accepted_lines": 73,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "SKILL.md": {
+          "additions": 45,
+          "deletions": 44,
+          "accepted_lines": 30
+        },
+        "README.md": {
+          "additions": 14,
+          "deletions": 6,
+          "accepted_lines": 14
+        },
+        "scripts/ci/redact-gate.yml": {
+          "accepted_lines": 28
+        },
+        "experts/心理咨询.md": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        }
+      }
+    }
+  }
+}
