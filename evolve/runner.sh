@@ -29,7 +29,7 @@ fi
 echo $$ > "$LOCK"; trap 'rm -f "$LOCK"' EXIT
 
 if ! command -v claude >/dev/null 2>&1; then
-  echo "claude CLI not found in PATH" >>"$LOG"; notify "🔴 /me 进化失败：找不到 claude CLI（看 $LOG）"; exit 1
+  echo "claude CLI not found in PATH" >>"$LOG"; notify "🔴 /me 进化失败：找不到 claude CLI（看 ${LOG}）"; exit 1
 fi
 
 # 框架仓基线（跑完要确认它没被动过）
@@ -50,7 +50,7 @@ $(cat "$SKILL_DIR/evolve/lens-evolve/review.md")
 【窗口起始】$SINCE
 【数据根 ME_HOME】$ME_HOME
 【框架根 SKILL_DIR】$SKILL_DIR
-请严格按 orchestrator 的 Step 0-4 执行；最终周报写到 $REPORT。"
+请严格按 orchestrator 的 Step 0-4 执行；最终周报写到 ${REPORT}。"
 
 echo "[$(date '+%H:%M:%S')] evolve start (window $SINCE ~ $TODAY)" >>"$LOG"
 # cwd 锁定到 ~/.me（默认编辑落在数据仓）；bypassPermissions 让无 TTY 下 git 等 Bash 不被挂起
@@ -61,13 +61,13 @@ echo "[$(date '+%H:%M:%S')] claude exit=$RC" >>"$LOG"
 # 机械红线①：框架仓必须零改动（不靠 prompt 自律）
 if [ "$(fw_state)" != "$FW_BEFORE" ]; then
   echo "⚠️ 框架仓 $SKILL_DIR 被改动！evolve 不应碰框架。" >>"$LOG"
-  notify "🔴 /me 进化异常：框架仓被改动，请检查 $SKILL_DIR（看 $LOG）"; exit 1
+  notify "🔴 /me 进化异常：框架仓被改动，请检查 ${SKILL_DIR}（看 ${LOG}）"; exit 1
 fi
 
 # 机械红线②：成功 = 退出码0 且 周报真生成（claude -p 可能 RC=0 但内部出错）
 if [ "$RC" -ne 0 ] || [ ! -f "$REPORT" ]; then
-  notify "🔴 /me 进化异常（exit=$RC，周报未生成），看 $LOG"; exit 1
+  notify "🔴 /me 进化异常（exit=${RC}，周报未生成），看 ${LOG}"; exit 1
 fi
 
-notify "🧬 /me 周进化完成 $TODAY；报告：$REPORT"
+notify "🧬 /me 周进化完成 ${TODAY}；报告：${REPORT}"
 exit 0

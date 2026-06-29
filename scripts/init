@@ -82,7 +82,7 @@ sys.stdout.write(s)
 PY
     launchctl unload "$PLIST" 2>/dev/null || true
     if launchctl load "$PLIST" 2>/dev/null; then
-      echo "  + 自动进化已启用：launchd 任务 $LABEL（每周一 09:17 跑 evolve/runner.sh）"
+      echo "  + 自动进化已启用：launchd 任务 ${LABEL}（每周一 09:17 跑 evolve/runner.sh）"
     else
       echo "  ! launchd load 失败，可手动：launchctl load $PLIST"
     fi
