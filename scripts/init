@@ -10,7 +10,8 @@ echo "==> 初始化私有数据仓: $ME_HOME"
 mkdir -p "$ME_HOME"/core \
          "$ME_HOME"/relations/家人 "$ME_HOME"/relations/团队 "$ME_HOME"/relations/干系人 \
          "$ME_HOME"/threads "$ME_HOME"/sessions "$ME_HOME"/decisions \
-         "$ME_HOME"/projects "$ME_HOME"/health "$ME_HOME"/toolkit "$ME_HOME"/config
+         "$ME_HOME"/projects "$ME_HOME"/health "$ME_HOME"/toolkit "$ME_HOME"/config \
+         "$ME_HOME"/evolution/runs "$ME_HOME"/archive
 
 copy_if_absent() {  # src dst
   if [ -f "$1" ] && [ ! -f "$2" ]; then cp "$1" "$2"; echo "  + $2"; fi
@@ -31,10 +32,18 @@ copy_if_absent "$SKILL_DIR/templates/health/timeline.template.md" "$ME_HOME/heal
 # 用户配置
 copy_if_absent "$SKILL_DIR/config/user.config.example" "$ME_HOME/config/user.config"
 
-# 数据仓 .gitignore（私有仓，主要忽略系统噪声）
+# 数据仓 .gitignore（私有仓：忽略系统噪声 + 进化运行日志/锁，避免把整段对话 JSON 提交进库）
 if [ ! -f "$ME_HOME/.gitignore" ]; then
-  printf '.DS_Store\n*.swp\n' > "$ME_HOME/.gitignore"
+  cat > "$ME_HOME/.gitignore" <<'EOF'
+.DS_Store
+*.swp
+evolution/.lock
+evolution/runs/*.log
+EOF
   echo "  + $ME_HOME/.gitignore"
+else
+  grep -q 'evolution/runs/\*.log' "$ME_HOME/.gitignore" 2>/dev/null || \
+    printf 'evolution/.lock\nevolution/runs/*.log\n' >> "$ME_HOME/.gitignore"
 fi
 
 # git init（私有、本地、无 remote）
@@ -43,10 +52,51 @@ if [ ! -d "$ME_HOME/.git" ]; then
   echo "  + git init（本地私有仓）"
 fi
 
+# 自动进化（M2+M3）：装 launchd 每周任务（默认开，仅 macOS；关闭见下方提示）
+if [ "$(uname)" = "Darwin" ]; then
+  # 先退役旧 sleep（若存在）——避免两个 launchd 任务并行改同一份 ~/.me
+  for old in "$HOME"/Library/LaunchAgents/me.*.sleep.plist; do
+    [ -f "$old" ] || continue
+    launchctl unload "$old" 2>/dev/null || true
+    mv "$old" "$old.retired" 2>/dev/null || true
+    echo "  - 已退役旧 sleep 定时：$(basename "$old")"
+  done
+  if [ -d "$ME_HOME/sleep" ] && [ ! -e "$ME_HOME/sleep.retired.tar.gz" ]; then
+    tar -czf "$ME_HOME/sleep.retired.tar.gz" -C "$ME_HOME" sleep 2>/dev/null \
+      && echo "  - 已归档旧 ~/.me/sleep → sleep.retired.tar.gz（evolve 取代之）"
+  fi
+
+  LABEL="me.evolve.$(id -un)"
+  PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
+  TPL="$SKILL_DIR/evolve/me.evolve.plist.template"
+  if [ -f "$TPL" ]; then
+    mkdir -p "$HOME/Library/LaunchAgents"
+    # python3 字面替换占位符（路径含特殊字符也安全）；总是重渲染，便于升级生效（幂等）
+    python3 - "$TPL" "$LABEL" "$SKILL_DIR" "$ME_HOME" "$PATH" > "$PLIST" <<'PY'
+import sys
+tpl,label,skill,me,path = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]
+s = open(tpl, encoding="utf-8").read()
+for k, v in (("__LABEL__",label),("__SKILL_DIR__",skill),("__ME_HOME__",me),("__PATH__",path)):
+    s = s.replace(k, v)
+sys.stdout.write(s)
+PY
+    launchctl unload "$PLIST" 2>/dev/null || true
+    if launchctl load "$PLIST" 2>/dev/null; then
+      echo "  + 自动进化已启用：launchd 任务 $LABEL（每周一 09:17 跑 evolve/runner.sh）"
+    else
+      echo "  ! launchd load 失败，可手动：launchctl load $PLIST"
+    fi
+  fi
+else
+  echo "  ! 非 macOS：未自动安装定时；可用 cron 每周调 $SKILL_DIR/evolve/runner.sh"
+fi
+
 cat <<EOF
 
 ✅ 完成。下一步：
   1. 编辑 $ME_HOME/config/user.config 填上你的称呼与 locale
   2. 直接对助手说 /me 开始第一次对话——它会引导你逐步填充档案
   3. ⚠️ $ME_HOME 是你的私人数据：请勿给它设置 git remote，勿推送到任何公开位置
+  4. 自动进化(M2 记忆整理 + M3 镜头复盘)已默认启用：每周一检查，若本周有新对话则整理并出一份周报到 $ME_HOME/evolution/runs/
+     关闭：touch $ME_HOME/evolution/.disabled
 EOF

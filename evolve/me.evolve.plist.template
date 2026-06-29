@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- launchd 模板 —— 由 scripts/init 替换占位符后写入 ~/Library/LaunchAgents/ 并 load。
+     占位符：__LABEL__ __SKILL_DIR__ __ME_HOME__ __PATH__
+     调度：每周一 09:17（Weekday 0=周日…1=周一）。 -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>__LABEL__</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__SKILL_DIR__/evolve/runner.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>ME_HOME</key><string>__ME_HOME__</string>
+    <key>PATH</key><string>__PATH__</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>17</integer>
+  </dict>
+  <key>StandardOutPath</key><string>__ME_HOME__/evolution/runs/launchd.stdout.log</string>
+  <key>StandardErrorPath</key><string>__ME_HOME__/evolution/runs/launchd.stderr.log</string>
+</dict>
+</plist>
