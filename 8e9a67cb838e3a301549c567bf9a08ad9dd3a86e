@@ -1,0 +1,80 @@
+evolve/me.evolve.plist.template
+  6cb43af0e4ba6621 1-28
+evolve/orchestrator.md
+  6cb43af0e4ba6621 1-40
+evolve/memory/consolidate.md
+  6cb43af0e4ba6621 1-36
+evolve/runner.sh
+  6cb43af0e4ba6621 1-73
+SKILL.md
+  6cb43af0e4ba6621 55,57-58,82,101,105-135,187-188,191,194,196-197
+scripts/init
+  6cb43af0e4ba6621 13-14,35,37-42,44-46,55-93,100-101
+evolve/README.md
+  6cb43af0e4ba6621 1-39
+evolve/lens-evolve/review.md
+  6cb43af0e4ba6621 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.8",
+  "base_commit_sha": "8e9a67cb838e3a301549c567bf9a08ad9dd3a86e",
+  "prompts": {
+    "6cb43af0e4ba6621": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3049b92-3a36-45fe-bcec-960bd41fc06f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 414,
+      "total_deletions": 86,
+      "accepted_lines": 367,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "evolve/orchestrator.md": {
+          "additions": 74,
+          "deletions": 34,
+          "accepted_lines": 40
+        },
+        "evolve/memory/consolidate.md": {
+          "additions": 36,
+          "accepted_lines": 36
+        },
+        "evolve/README.md": {
+          "additions": 42,
+          "deletions": 3,
+          "accepted_lines": 39
+        },
+        "SKILL.md": {
+          "additions": 45,
+          "deletions": 8,
+          "accepted_lines": 45
+        },
+        "scripts/init": {
+          "additions": 63,
+          "deletions": 13,
+          "accepted_lines": 53
+        },
+        "evolve/me.evolve.plist.template": {
+          "additions": 29,
+          "deletions": 1,
+          "accepted_lines": 28
+        },
+        "evolve/runner.sh": {
+          "additions": 100,
+          "deletions": 27,
+          "accepted_lines": 73
+        },
+        "scripts/ci/redact-gate.yml": {
+          "accepted_lines": 28
+        },
+        "evolve/lens-evolve/review.md": {
+          "additions": 25,
+          "accepted_lines": 25
+        }
+      }
+    }
+  }
+}
