@@ -1,0 +1,33 @@
+README.md
+  6cb43af0e4ba6621 14-15,85-86,90-92,94-99,101-105,107-110,112-114,116-117,119,121,123,125,127,129-131,133,135-153,155,157,159-177,179-180,206-207,217-220,222,233-234
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.8",
+  "base_commit_sha": "ed294d2c908e2ee1bdd9e1ff6afbfc23b849d87b",
+  "prompts": {
+    "6cb43af0e4ba6621": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3049b92-3a36-45fe-bcec-960bd41fc06f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 89,
+      "total_deletions": 58,
+      "accepted_lines": 117,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "README.md": {
+          "additions": 89,
+          "deletions": 58,
+          "accepted_lines": 89
+        },
+        "scripts/ci/redact-gate.yml": {
+          "accepted_lines": 28
+        }
+      }
+    }
+  }
+}
