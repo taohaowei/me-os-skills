@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# init —— 从框架模板脚手架出你的私有数据仓 $ME_HOME（默认 ~/.me）
+# 可重复运行：已存在的文件不会被覆盖。
+set -euo pipefail
+
+SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ME_HOME="${ME_HOME:-$HOME/.me}"
+
+echo "==> 初始化私有数据仓: $ME_HOME"
+mkdir -p "$ME_HOME"/core \
+         "$ME_HOME"/relations/家人 "$ME_HOME"/relations/团队 "$ME_HOME"/relations/干系人 \
+         "$ME_HOME"/threads "$ME_HOME"/sessions "$ME_HOME"/decisions \
+         "$ME_HOME"/projects "$ME_HOME"/health "$ME_HOME"/toolkit "$ME_HOME"/config
+
+copy_if_absent() {  # src dst
+  if [ -f "$1" ] && [ ! -f "$2" ]; then cp "$1" "$2"; echo "  + $2"; fi
+}
+
+# 核心档案
+copy_if_absent "$SKILL_DIR/templates/core/PROFILE.template.md"     "$ME_HOME/core/PROFILE.md"
+copy_if_absent "$SKILL_DIR/templates/core/STATE.template.md"       "$ME_HOME/core/STATE.md"
+copy_if_absent "$SKILL_DIR/templates/core/SAFETY.template.md"      "$ME_HOME/core/SAFETY.md"
+copy_if_absent "$SKILL_DIR/templates/core/MEMORY.template.md"      "$ME_HOME/MEMORY.md"
+copy_if_absent "$SKILL_DIR/templates/core/style-notes.template.md" "$ME_HOME/config/style-notes.md"
+
+# 健康子系统
+copy_if_absent "$SKILL_DIR/templates/health/CLAUDE.md"            "$ME_HOME/health/CLAUDE.md"
+copy_if_absent "$SKILL_DIR/templates/health/profile.template.md"  "$ME_HOME/health/profile.md"
+copy_if_absent "$SKILL_DIR/templates/health/timeline.template.md" "$ME_HOME/health/timeline.md"
+
+# 用户配置
+copy_if_absent "$SKILL_DIR/config/user.config.example" "$ME_HOME/config/user.config"
+
+# 数据仓 .gitignore（私有仓，主要忽略系统噪声）
+if [ ! -f "$ME_HOME/.gitignore" ]; then
+  printf '.DS_Store\n*.swp\n' > "$ME_HOME/.gitignore"
+  echo "  + $ME_HOME/.gitignore"
+fi
+
+# git init（私有、本地、无 remote）
+if [ ! -d "$ME_HOME/.git" ]; then
+  git -C "$ME_HOME" init -q
+  echo "  + git init（本地私有仓）"
+fi
+
+cat <<EOF
+
+✅ 完成。下一步：
+  1. 编辑 $ME_HOME/config/user.config 填上你的称呼与 locale
+  2. 直接对助手说 /me 开始第一次对话——它会引导你逐步填充档案
+  3. ⚠️ $ME_HOME 是你的私人数据：请勿给它设置 git remote，勿推送到任何公开位置
+EOF

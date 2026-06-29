@@ -1,0 +1,26 @@
+# ===== 开源仓 .gitignore =====
+# 这是公开框架仓。它本不该包含任何个人数据——数据都在 $ME_HOME（默认 ~/.me）。
+# 以下规则是防御性的，防止个人内容被误提交。
+
+# 系统/编辑器噪声
+.DS_Store
+*.swp
+*~
+
+# 用户私有配置（只提交 .example）
+config/user.config
+
+# 私有红线黑名单（真名清单，绝不入仓；实际存在 $ME_HOME）
+.redact-blocklist
+*.redact-blocklist
+
+# 任何本地个性化覆盖文件
+*.local
+*.local.md
+
+# 防御：若有人把数据仓误链到这里
+runs/
+logs/
+core/*.md
+!templates/**
+!examples/**

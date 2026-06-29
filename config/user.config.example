@@ -1,0 +1,18 @@
+# user.config —— 用户身份与本地配置
+#
+# 复制本文件为 $ME_HOME/config/user.config 并填写。
+# /me 启动时读取它，把框架里的 {{user_name}} 替换为真实称呼。
+# 本文件属于「个人数据」，存在 $ME_HOME（默认 ~/.me），不进开源仓库。
+
+# 助手怎么称呼你
+name: 你的名字
+
+# 区域（决定危机热线用哪一份 config/crisis-hotlines.<locale>.md）
+# 可选：zh-CN / en-US / generic
+locale: zh-CN
+
+# 数据根目录（可选，默认 ~/.me）。一般不用改。
+# me_home: ~/.me
+
+# 启用哪些镜头（可选，默认全开）。镜头定义见技能目录 experts/
+# lenses: [心理咨询, 人员分析, 项目诊断, 资源协调, 职业规划, 向上管理, 健康记录员]

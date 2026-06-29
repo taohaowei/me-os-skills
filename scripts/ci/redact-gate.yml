@@ -1,0 +1,28 @@
+# 红线脱敏门禁（Redact Gate）
+#
+# 用途：在每次 push / pull_request 时跑结构化脱敏检测，命中即 fail，
+# 阻止任何疑似真实个人信息进入公开开源仓。
+#
+# 注意：CI 运行环境里没有用户私有的 $ME_HOME/.redact-blocklist
+# （真名 / 真实公司名等黑名单只存在于本地数据根，永不入公开仓），
+# 因此本工作流只能跑 scripts/redact-check.sh 的【内置通用结构检测】
+# （如电话号码、内网 IP、邮箱、疑似精确日期组合、第三方精神病学标签等结构特征）。
+# 真名类敏感词检测属于本地职责，必须在 push 前由开发者本地运行同一脚本完成。
+
+name: redact-gate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  redact-check:
+    name: 脱敏红线检测
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 运行内置通用结构检测（命中即失败）
+        shell: bash
+        run: bash scripts/redact-check.sh
