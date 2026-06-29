@@ -11,27 +11,16 @@
   </p>
   <p align="center">
     <a href="#-why-me--为什么需要-me">Why 为什么</a> ·
-    <a href="#-features--它能为你做什么">Features 特性</a> ·
+    <a href="#-what-it-can-do--能为你做什么">Do 能做什么</a> ·
+    <a href="#-how-it-works--它是怎么工作的">How 原理</a> ·
     <a href="#-install--安装">Install 安装</a> ·
     <a href="#-privacy--隐私">Privacy 隐私</a> ·
-    <a href="#-for-builders--给开发者">Builders 开发者</a> ·
     <a href="#-license--许可">License</a>
   </p>
   <p align="center">
     <a href="https://github.com/taohaowei/soul-guardian">🫂 也看看姊妹项目 Soul Guardian（专注心理陪伴）</a>
   </p>
 </p>
-
----
-
-> **⚠️ Important / 重要声明**
->
-> `me` is a personal-organization and companionship tool. It is **not** a medical device, and it does **not** provide medical diagnosis, treatment, or replace a licensed doctor, therapist, or psychiatrist. Its health module **only records — it never diagnoses or prescribes.** If you are in crisis, contact a professional or an emergency hotline immediately.
->
-> `me` 是一个个人整理与陪伴工具，**不是医疗器械**，**不提供医疗诊断 / 治疗，也不能替代执业医师、心理咨询师或精神科医生**。健康模块**只记录、不诊断、不开药**。如遇危机，请立即联系专业人士或当地危机热线。
->
-> 全国 24 小时心理援助热线：**400-161-9995**　·　生命热线：**400-821-1215**　·　紧急情况：**120 / 110**
-> · Full disclaimer / 完整声明 → [DISCLAIMER.md](./DISCLAIMER.md)
 
 ---
 
@@ -93,47 +82,102 @@ Your work coach doesn't know what's happening at home. Your journaling app forge
 
 帮你管团队的不知道你家里发生了什么；陪你写心情的，第二天就忘了你是谁；体检报告、用药记录散在五个地方；职业的迷茫、家庭的压力、凌晨三点的焦虑——每一样都掉进一个"从零开始"的新对话里。
 
-> **`me` is one companion who holds all of it.**
-> It speaks like a mentor and a friend (亦师亦友), shifts naturally between coaching, listening, and record-keeping, and — crucially — **remembers**. Every conversation builds on the last.
->
-> **`me` 把这一切交给同一个人。** 它亦师亦友，在"教练 / 倾听者 / 记录员"之间自然切换，而且最关键的——**它记得**。每一次对话，都接着上一次。
-
-And it does this without sending a single word to the cloud. **The framework is open source; your data never leaves your machine.**
-而这一切都不向云端发送一个字。**框架开源，你的数据永不离开你的电脑。**
+> **`me` is one companion who holds all of it** — speaks like a mentor and a friend, shifts naturally between coaching, listening, and record-keeping, and crucially: **it remembers.**
+> **`me` 把这一切交给同一个人** —— 它亦师亦友，在"教练 / 倾听者 / 记录员"之间自然切换，而且最关键的：**它记得。** 每次对话，都接着上一次。
 
 ---
 
-## ✨ Features / 它能为你做什么
+## ✨ What it can do / 能为你做什么
 
-### 🧩 One companion, every part of life / 一个人格，陪你走全维度
+一个入口，按你聊的话题自动切换"镜头"。你不用记任何指令——**直接说你的事就行**。常见的几件事：
 
-Talk about your team and it's a **management coach**. Vent about a hard day and it's a **warm counselor**. Mention a doctor's visit and it's a careful **health recorder**. You never juggle five different bots — it's always the *same* person who knows you, just looking through a different lens.
+### 🧑‍💼 带团队 · 做管理 / Lead & manage
+- "团队里有人最近状态不对" → 帮你看懂一个人：能力、动机、性格、该怎么带
+- "这个活该派给谁" → 在能力、负载、成长价值之间帮你排兵布阵
+- "项目有点乱、不知从哪下手" → 六维健康度体检，给你**下周就能做**的 3 件事
+- "这事怎么跟老板开口" → 把坏消息 / 争取资源，讲成对方能听进去的话
+- "怎么做好这次 1on1 / 反馈" → 给你具体的开场与话术
 
-聊团队，它是**管理教练**；倾诉烦心事，它是**温暖的咨询师**；提到看病吃药，它是细心的**健康记录员**。你不用在五个机器人之间来回切换——永远是**同一个懂你的人**，只是换了看你的"镜头"。
+### 🫂 聊情绪 · 处理关系 / Feelings & relationships
+- "今天好累 / 好烦" → 先接住情绪，不急着给你"解决方案"
+- "又和家里人吵了" → 用家庭系统的视角，帮你看清反复上演的剧本
+- "我是不是不够好" → 一起看看那个卡住你的念头（认知行为视角）
+- 想倾诉、想被理解 → 一个不评判、记得你来时路的人
 
-### 🧠 It grows to know you / 越聊越懂你
+### 🧭 想清楚 · 做决定 · 规划 / Think, decide, plan
+- "要不要接这个新机会" → 把模糊的纠结拆成选项、代价，和你真正想要的
+- "感觉自己没在成长" → 照见你的时间花在哪、下一步该练什么
+- "从技术转管理好难" → 陪你走角色转型，识别真正的卡点（往往不是你以为的那个）
 
-No intake forms, no questionnaires. `me` builds up its understanding of you **gradually and gently** — a little deeper each conversation, never interrogating you on day one. It keeps a living profile of who you are, the people in your life, and the threads you keep coming back to.
+### 🩺 记健康 / Keep your health straight
+- "今天去看了医生 / 换了个药 / 做了体检" → 整理成一本清楚、带时间线、可检索的健康账
+- 它只记录**事实**，把**诊断**永远留给专业人员——绝不假装是医生
 
-没有登记表，没有问卷。`me` **温和地、一点点地**加深对你的理解——每次只深入一点，绝不第一次见面就逼问。它为你、你身边的人、你反复纠结的议题，各自维护一份"越长越懂"的活档案。
+> 这些背后是 7 个"专家镜头"——**心理咨询 / 人员分析 / 项目诊断 / 资源协调 / 职业规划 / 向上管理 / 健康记录员**。
+> 但你不用挑镜头：说什么话题，它自己切。而且永远是**同一个懂你的人**，只是换了看你的角度。
 
-### 🔒 Your life stays on your machine / 你的秘密只在你自己电脑上
+---
 
-This is the part most tools get wrong. With `me`, the **open-source framework** and **your private data** live in two physically separate places. What's public is just the *engine*. Everything personal — your profiles, your sessions, your health records — sits in a local folder that has **no remote and is never pushed, by design.**
+## 🧠 How it works / 它是怎么工作的
 
-这是大多数工具做错的地方。`me` 把**开源的框架**和**你的私人数据**放在两个物理隔离的地方：公开的只是"引擎"，而你的全部个人内容——画像、对话、健康记录——都待在一个本地文件夹里，**从设计上就没有 remote、永不上传。**
+`me` 由两部分组成：一个**会"换镜头"的对话引擎（技能）**，和一套**本地记忆系统**。
 
-### 🛟 Safety comes first / 把安全放在第一位
+### ① 技能：一个引擎，多个镜头 / The skill: one engine, many lenses
 
-Every session quietly checks in on how you're doing. If something sounds like a crisis, `me` switches to a care-first protocol, surfaces **local** crisis hotlines, and is always honest about being an AI with limits — never pretending to be your therapist.
+每次你开口，`me` 会：**先读你的核心档案 → 做一次安全检查 → 按话题加载对应镜头和相关档案 → 用统一人格回应你**。背后有三条协议在约束它：
 
-每次对话都会默默关照你的状态。一旦出现危机信号，`me` 会切换到"先关怀"的安全流程，给出**你所在地区**的危机热线，并始终诚实地说明自己是有局限的 AI——绝不假装是你的咨询师。
+- **🛟 安全协议**：每次先看你的状态；识别到危机信号，优先关怀并给出本地危机热线，绝不假装是你的咨询师。
+- **🌱 渐进式深化（L1–L5）**：对每个人、每个议题分 5 级深度，每次只深入一点点，绝不第一次见面就逼问。
+- **🏷️ 三态标记**：写进档案的每条信息都标 `[事实] / [判断] / [假设] / [来源]`，清楚区分"它知道的"和"它猜的"。
 
-### 🩺 A clear health record that never plays doctor / 一本清楚的健康账，但它绝不当医生
+技能目录（**就是这个开源仓**，框架公开、零个人数据）：
 
-Tell it about a visit, a medication, a checkup — it files everything into a clean, searchable health archive with a single timeline. It records the **facts** and leaves the **diagnosis** to the professionals. Always.
+```
+me/                        # 仓库本身就是一个技能，SKILL.md 在根目录
+├── SKILL.md               # 统一入口：人格、启动协议、安全协议、镜头路由表
+├── experts/               # 7 个专家镜头
+│   ├── 心理咨询.md          #   默认底色：温暖共情、家庭系统、CBT、叙事
+│   ├── 人员分析.md          #   看懂一个人：冰山模型 / DISC / 九宫格 / 动机诊断
+│   ├── 项目诊断.md          #   项目六维健康度 / 从混乱到有序 / SOP
+│   ├── 资源协调.md          #   人×事匹配 / 负载均衡 / 单点依赖治理
+│   ├── 职业规划.md          #   角色转型 / 时间管理 / 能力发展
+│   ├── 向上管理.md          #   干系人管理 / 汇报策略 / 争取资源
+│   └── 健康记录员.md         #   纯记录、不诊断的健康档案协议
+├── frameworks/            # 方法论速查（DISC / GROW / SBI / 情境领导力…）
+├── toolkit/               # 工具协议（EMERGENCY 情绪急救：4-7-8 呼吸、落地法…）
+├── templates/             # 各类档案的空白结构模板
+├── examples/              # 全脱敏虚构示例（人物"林溪"，演示档案长什么样）
+├── config/                # 危机热线（多 locale）+ user.config 样例
+├── scripts/               # init（生成数据仓）/ redact-check（脱敏自检）
+└── docs/                  # 架构 / 方法论 / 镜头路由 / 上手指南
+```
 
-把就医、用药、体检说给它听，它会整理成一本清楚、可检索、带时间线的健康档案。它只记录**事实**，把**诊断**永远留给专业人员。
+### ② 记忆系统：你的私有数据仓 / The memory: your private vault
+
+对话里值得记的东西，`me` 在**征得你同意后**写成本地 Markdown，存进 `$ME_HOME`（默认 `~/.me`）。下次启动自动加载——于是它"记得"。这个目录**没有 git remote、永不上传**，与上面的开源仓物理隔离。
+
+```
+~/.me/                     # 你的私有数据仓（无 remote · 永不上传 · 纯文本可读）
+├── MEMORY.md              # 全部档案的索引，每次启动第一个读
+├── config/
+│   ├── user.config        #   你的称呼 / 地区（locale 决定用哪份危机热线）
+│   └── style-notes.md     #   只对你成立的个性化提醒（如"他爱先找方案，先停在情绪"）
+├── core/
+│   ├── PROFILE.md         #   全人画像：你是谁、角色、核心议题、优势与挑战
+│   ├── STATE.md           #   当前状态：最近情绪 / 待跟进 / 下次方向（每次对话后覆盖）
+│   └── SAFETY.md          #   心理安全档案：风险等级 / 预警信号（每次启动必查）
+├── relations/             # 关系档案（L1–L5 渐进式，按提及动态加载）
+│   ├── 家人/               #   每位家人一个文件
+│   ├── 团队/               #   每个团队成员一个文件
+│   └── 干系人/             #   上级 / 业务方等
+├── threads/               # 议题主题线：反复出现的话题，按时间纵向深化
+├── sessions/              # 会话流水：按日期归档，只写不改
+├── decisions/             # 重要决策日志：判断 → 选项 → 预期 → 复盘
+└── health/                # 健康档案：就医 / 用药 / 体检 / 时间线（纯记录）
+```
+
+> 一句话：**框架（技能）是引擎，记忆系统是只属于你的内容。** 两者用环境变量 `$ME_HOME` 解耦，住在两个永不交叉的目录里。
+> 想看更深的设计 → [docs/architecture.md](./docs/architecture.md) · [docs/methodology.md](./docs/methodology.md) · [docs/lens-routing.md](./docs/lens-routing.md)
 
 ---
 
@@ -159,8 +203,8 @@ cd me-os-skills && ./scripts/init
 #    /me 今天有点累，想聊聊
 ```
 
-Then just talk. Tell it about your day, your team, your family — it'll offer to remember the things worth remembering.
-然后就开聊。说说你的一天、你的团队、你的家人——值得记的东西，它会主动问你"要不要记下来"。
+Then just talk — tell it about your day, your team, your family; it'll offer to remember the things worth remembering.
+然后就开聊——说说你的一天、你的团队、你的家人，值得记的东西它会主动问你"要不要记下来"。
 
 📖 Full guide / 完整上手指南 → [docs/getting-started.md](./docs/getting-started.md)
 
@@ -170,27 +214,12 @@ Then just talk. Tell it about your day, your team, your family — it'll offer t
 
 Privacy isn't a feature here — it's the foundation. / 隐私不是一个功能，而是地基。
 
-- **Your data never leaves your machine.** / **数据永不出仓。** Real profiles live only in `$ME_HOME` (default `~/.me`), physically separate from this public repo; `init` auto-adds it to `.gitignore`.
-- **Two repos, two fates.** / **两个仓库、两种命运。** The framework is public and shareable; your data folder has no remote and is never pushed.
-- **Third parties are protected.** / **保护第三方。** Profiles may mention family or coworkers — the framework forbids clinical labels on anyone, and a built-in `redact-check` scans for real names, phone numbers, and sensitive details before you ever share anything.
-- **You can read every byte.** / **一切可读、本地、纯文本。** It's all plain Markdown on your disk. No black box.
+- **Your data never leaves your machine.** / **数据永不出仓。** 真实档案只存在 `$ME_HOME`（默认 `~/.me`），与公开框架仓物理隔离；`init` 自动把它加入 `.gitignore`。
+- **Two repos, two fates.** / **两个仓库、两种命运。** 框架公开可分享；数据仓没有 remote、永不 push。
+- **Third parties are protected.** / **保护第三方。** 档案会提到家人、同事——框架禁止给任何人贴临床标签，内置 `redact-check` 在你分享前扫描真实人名、电话、敏感细节。
+- **You can read every byte.** / **一切可读。** 全是你磁盘上的纯 Markdown，没有黑箱。
 
-详见 / Details → [docs/privacy.md](./docs/privacy.md) · [SECURITY.md](./SECURITY.md)
-
----
-
-## 🛠️ For builders / 给开发者
-
-Under the hood, `me` is a small, hackable framework — not a monolith:
-
-- **Lens routing** — one persona dynamically loads "expert lenses" (counseling, people analysis, project diagnosis, resource coordination, career planning, upward management, health recording) by topic.
-- **L1–L5 progressive profiles** with `[fact]/[judgment]/[assumption]/[source]` tagging, so the assistant knows what it *knows* vs. what it's *guessing*.
-- **Everything is Markdown + protocol.** Add a lens by dropping a file in `experts/` and a row in `SKILL.md`. Edit the framework, and your next `/me` uses it instantly.
-
-`me` 的内核是一个小而可改的框架：**镜头路由** + **L1–L5 渐进式档案**（带"事实 / 判断 / 假设 / 来源"标记）+ **纯 Markdown 协议**。加一个镜头 = 在 `experts/` 放个文件 + 在 `SKILL.md` 加一行；改完框架，下次 `/me` 立即生效。
-
-Architecture & methodology / 架构与方法论 → [docs/architecture.md](./docs/architecture.md) · [docs/methodology.md](./docs/methodology.md) · [docs/lens-routing.md](./docs/lens-routing.md)
-Want to contribute? / 想贡献？ → [CONTRIBUTING.md](./CONTRIBUTING.md)（**please never commit real personal data / 请勿提交任何真实个人数据**）
+详见 / Details → [docs/privacy.md](./docs/privacy.md) · [SECURITY.md](./SECURITY.md) · 想扩展框架？[CONTRIBUTING.md](./CONTRIBUTING.md)（**请勿提交任何真实个人数据**）
 
 ---
 
@@ -201,3 +230,5 @@ Want to contribute? / 想贡献？ → [CONTRIBUTING.md](./CONTRIBUTING.md)（**
 
 > **The framework can be open. Your story stays home.**
 > **框架可以开源，但你的故事，永远留在家里。**
+
+<sub>ℹ️ `me` is a personal companion & organization tool — **not** a medical or clinical service. See [DISCLAIMER.md](./DISCLAIMER.md). · `me` 是陪伴与整理工具，**非**医疗 / 临床服务，详见 [DISCLAIMER.md](./DISCLAIMER.md)。</sub>
